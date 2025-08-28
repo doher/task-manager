@@ -1,0 +1,23 @@
+model Task {
+  id          Int        @id @default(autoincrement())
+  createAt    DateTime   @default(now())
+  updateAta   DateTime   @updatedAt
+  title       String
+  status      TaskStatus
+  priority    Priority
+  description String?
+  dueDate     DateTime?
+}
+
+enum TaskStatus {
+  PENDING
+  DONE
+  CANCELLED
+  IN_PROGRESS
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
